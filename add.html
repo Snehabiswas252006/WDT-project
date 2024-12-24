@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .product-info img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .product-details h2 {
+            margin: 0;
+            color: #444;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="number"] {
+            width: 60px;
+        }
+
+        .add-to-cart-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Shopping Cart</h1>
+
+    <div class="product-info">
+        <img src="data:image/jpeg;base64,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" alt="Product Image">
+        <div class="product-details">
+            <h2>Ambrosia:An Alluring Auraa</h2>
+            <p>Thanks for visiting our website!!Support Ambrosia!</p>
+        </div>
+    </div>
+
+    <form id="cartForm">
+        <div class="form-group">
+            <label for="size">Select Size:</label>
+            <select id="size" name="size" required>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="color">Select Color:</label>
+            <select id="color" name="color" required>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('cartForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Gather form data
+        const size = document.getElementById('size').value;
+        const color = document.getElementById('color').value;
+        const quantity = document.getElementById('quantity').value;
+
+        // Simple alert for confirmation
+        alert('Item added to cart!\nSize: ${size}\nColor: ${color}\nQuantity: ${quantity}');
+    });
+</script>
+
+</body>
+</html>

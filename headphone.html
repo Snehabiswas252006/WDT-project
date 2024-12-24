@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireless Headphones Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        header {
+            background-color: #c70265;
+            padding: 15px 0;
+        }
+        .navbar-brand {
+            color: #f39c12;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .navbar-nav .nav-link {
+            color: #ecf0f1 !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #f39c12 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpqhMARQ6TUSqJm3u-kQLWo8VRDgPZcf-XmQ&s') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: rgb(216, 58, 58);
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: rgb(206, 41, 41);
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .hero .btn-primary {
+            background-color: grey;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .hero .btn-primary:hover {
+            background-color:black;
+        }
+
+        /* Price Range Filter */
+        .price-range {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        .price-range h3 {
+            font-size: 24px;
+            color: #f0f5fa;
+        }
+        .price-range .range-input {
+            width: 100%;
+        }
+
+        /* Product Section */
+        .catalog {
+            padding: 50px 20px;
+            text-align: center;
+            animation: slideIn 2s ease-out;
+        }
+        .catalog h2 {
+            font-size: 36px;
+            color: #c92a59;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: rgb(26, 10, 10);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .product-card .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-card .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #d8e5f1;
+        }
+        .product-card .card-text {
+            font-size: 18px;
+            color: #e74c3c;
+        }
+        .product-card .btn-info {
+            background-color: #f39c12;
+            border-radius: 25px;
+            padding: 10px 30px;
+            color: white;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .product-card .btn-info:hover {
+            background-color: #e67e22;
+        }
+        .product-card .btn-secondary {
+            background-color: #3498db;
+            border-radius: 25px;
+            padding: 10px 30px;
+            color: white;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .product-card .btn-secondary:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Trendy tshirts Merch</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="./home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./aboutus.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Shop the most Trendy Kpop merch tshirts!!</h1>
+        <p>Get the best quality, comfort, and trends for your liking.</p>
+        <a href="#catalog" class="btn btn-primary">Browse Catalog</a>
+    </div>
+
+    <!-- Price Range Filter -->
+    <div class="container price-range">
+        <h3>Filter by Price</h3>
+        <input type="range" min="0" max="500" value="100" class="range-input" id="priceRange" oninput="updatePriceRange()">
+        <p>Price: $<span id="priceValue">100</span></p>
+    </div>
+
+    <!-- Product Catalog -->
+    <div class="container catalog" id="catalog">
+        <h2>Our Show Stoppers</h2>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTJNXnawqRlwUCVW37FM_mOKB5SaouGsk5bypbRm8uOJ8gi2DmEVu2zmAVt10p9FFBTzhpOSMk5YBMc7ocS4ceiVa1BhzKlMkgPXtLVzeXz&usqp=CAE" alt="Headphone 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Printed Women White Tshirt Polyester Fabric Kpop Fashion</h5>
+                        <p class="card-text"> $2190.00</p>
+                        <a href="./pay.html" class="btn btn-info">Buy Now</a>
+                        <a href="./add.html" class="btn btn-secondary">Add to Cart</a> <!-- Add to Cart button -->
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR--Zv6FFIs9KV1kLWf4FSKmW5sAu6h0NEQZ32EFm6ZqzJDI8j8eDrkStA2CixdGS1xjTivgngYZKT8lelDj-wpx8JPylYiLQDEIf8isao&usqp=CAE" alt="Headphone 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Kpop Women Graphic Printed Round Neck Tshirt</h5>
+                        <p class="card-text">₹2,099</p>
+                        <a href="./pay.html" class="btn btn-info">Buy Now</a>
+                        <a href="./add.html" class="btn btn-secondary">Add to Cart</a> <!-- Add to Cart button -->
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSYDh_XoUlsvaIn6L8x_K798aQm2RfYlaXXJc4EdtYxTMHJ8rP7sZ1pmZkSStOrB3uj9myuEj5KUme9XtYpXnCjWxfuw8S6FLojwArd6wM&usqp=CAE" alt="Headphone 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Kpop Women Typography Printed Round Neck Tshirt</h5>
+                        <p class="card-text">₹5,998</p>
+                        <a href="./pay.html" class="btn btn-info">Buy Now</a>
+                        <a href="./add.html" class="btn btn-secondary">Add to Cart</a> <!-- Add to Cart button -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ambrosia. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        function updatePriceRange() {
+            let price = document.getElementById('priceRange').value;
+            document.getElementById('priceValue').textContent = price;
+        }
+    </script>
+
+</body>
+</html>

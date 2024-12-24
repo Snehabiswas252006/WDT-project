@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        header {
+            background-color: rgb(20, 20, 172);
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            color: #f39c12;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .navbar-nav .nav-link {
+            color: #ecf0f1 !important;
+            font-weight: 500;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #f39c12 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('data:image/jpeg;base64,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') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: black;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        .hero .btn-primary {
+            background-color: lightskyblue;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .hero .btn-primary:hover {
+            background-color: blue;
+            transform: scale(1.1);
+        }
+
+        /* Price Range Filter */
+        .price-range {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            transition: all 0.3s ease-in-out;
+        }
+        .price-range:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .price-range h3 {
+            font-size: 24px;
+            color: #34495e;
+        }
+        .price-range .range-input {
+            width: 100%;
+        }
+
+        /* Product Section */
+        .catalog {
+            padding: 50px 20px;
+            text-align: center;
+            animation: slideIn 2s ease-out;
+        }
+        .catalog h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            animation: fadeUp 1.5s ease-in-out;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .product-card .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-card .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #34495e;
+        }
+        .product-card .card-text {
+            font-size: 18px;
+            color: #e74c3c;
+        }
+        .product-card .btn-info {
+            background-color: #f39c12;
+            border-radius: 25px;
+            padding: 10px 30px;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .product-card .btn-info:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Trending Kpop Lightsticks</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="./home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./aboutus.html">About us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Grab your favourite Lightsticks!</h1>
+        <p>Find the best deals on lightsticks from top brands.</p>
+        <a href="#catalog" class="btn btn-primary">Browse Catalog</a>
+    </div>
+
+    <!-- Price Range Filter -->
+    <div class="container price-range">
+        <h3>Filter by Price</h3>
+        <input type="range" min="0" max="3000" value="1000" class="range-input" id="priceRange" oninput="updatePriceRange()">
+        <p>Price: $<span id="priceValue">1000</span></p>
+    </div>
+
+    <!-- Product Catalog -->
+    <div class="container catalog" id="catalog">
+        <h2>Our Lightsticks</h2>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTsp2ElW7kvnQzJy_riAYhSsB0q7qRK-lWaHoJVYI6ga15fYiJF0LLbU57h7B_CuZBUTItWAoImlpAawghTaYASACBNEWpEqH_ApWCYLv2502A97o6D3CaZ" alt="Laptop 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Seventeen Official Lightstick</h5>
+                        <p class="card-text">$6,000</p>
+                        <a href="pay.html" class="btn btn-info">Buy Now</a>
+                        <a href="./add.html" class="btn btn-info">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS0gdD0hm-N6OAiRrODWJwz_wa8PFbjrhbX1FYHzRExXcq1LCD2J4XdiA3O9IniXe8Hgni1vjJUv6prjJe58ZX1lDuqEcO4SjgkYjmCLgHRNc6tViBFm03Q9A" alt="Laptop 2">
+                    <div class="card-body">
+                        <h5 class="card-title">BTS Official Lightstick</h5>
+                        <p class="card-text"> $7,600</p>
+                        <a href="./pay.html" class="btn btn-info">Buy Now</a>
+                        <a href="./add.html" class="btn btn-info">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="data:image/jpeg;base64,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" alt="Laptop 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Twice Official Lightstick" Touchscreen Notebook</h5>
+                        <p class="card-text">₹4,990</p>
+                        <a href="./pay.html" class="btn btn-info">Buy Now</a>
+                        <a href="./add.html" class="btn btn-info">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ambrosia. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        function updatePriceRange() {
+            let price = document.getElementById('priceRange').value;
+            document.getElementById('priceValue').textContent = price;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background Image */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://via.placeholder.com/1600x900') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Form styling */
+        .payment-form {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f39c12;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"], input[type="date"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #f39c12;
+            color: #fff;
+            font-size: 18px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e67e22;
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            z-index: 999;
+        }
+
+        .popup h3 {
+            color: #f39c12;
+        }
+
+        .popup .popup-content {
+            margin-top: 15px;
+        }
+
+        .popup .close-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .popup .close-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* Show the popup when class 'show' is added */
+        .popup.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Payment Form -->
+    <div class="payment-form">
+        <h2>Payment Details</h2>
+        <form id="paymentForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="cardNumber">Card Number</label>
+            <input type="number" id="cardNumber" name="cardNumber" placeholder="Enter your card number" required>
+
+            <label for="expiryDate">Expiry Date</label>
+            <input type="date" id="expiryDate" name="expiryDate" required>
+
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" name="cvv" placeholder="Enter your CVV" required>
+
+            <input type="submit" value="Submit Payment">
+        </form>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <h3>Payment Successful</h3>
+        <div class="popup-content">
+            <p>Your payment was processed successfully! Thank you for your purchase.</p>
+        </div>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        // Form submission event
+        const form = document.getElementById('paymentForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            showPopup(); // Show the popup on successful submission
+        });
+
+        // Show popup function
+        function showPopup() {
+            document.getElementById('popup').classList.add('show');
+        }
+
+        // Close popup function
+        function closePopup() {
+            document.getElementById('popup').classList.remove('show');
+        }
+    </script>
+    
+</body>
+</html>
+
